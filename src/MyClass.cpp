@@ -11,7 +11,7 @@ MyClass::~MyClass ()
 
 void MyClass::init(const quint32 msecs)
 {
-   _timer = new QTimer;
+   _timer = new QTimer(parent());
    connect(_timer, SIGNAL(timeout()), this, SLOT(OnTimer()));
    _timer->start(msecs);
 }
