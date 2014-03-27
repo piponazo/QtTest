@@ -20,9 +20,6 @@ OPTION(WARNINGS_ARE_ERRORS  "Treat warnings as errors"                          
 OPTION(WARNINGS_ANSI_ISO    "Issue all the mandatory diagnostics Listed in C standard"      ON)
 OPTION(WARNINGS_EFFCPP      "Issue all the warnings listed in the book of Scot Meyers"      OFF)
 OPTION(ENABLE_PROFILING     "Enable profiling in Valgrind (Add flags: -g -fno_inline)"      OFF)
-OPTION(ENABLE_SSE           "SSE instructions"                                              ON)
-OPTION(ENABLE_SSE2          "SSE2 instructions"                                             ON)
-OPTION(ENABLE_SSE3          "SSE3 instructions"                                             ON)
 OPTION(ENABLE_COVERAGE      "Perform code coverage in HTML"                                OFF)
 OPTION(ENABLE_COVERAGE_XML  "Perform code coverage in XML for jenkins integration"         OFF)
 
@@ -49,3 +46,5 @@ ENDIF()
 
 SET(CMAKE_INCLUDE_DIRS_CONFIGCMAKE ${CMAKE_INSTALL_PREFIX}/include  CACHE PATH "Output directory for headers")
 SET(CMAKE_LIB_DIRS_CONFIGCMAKE     ${CMAKE_INSTALL_PREFIX}/lib      CACHE PATH "Output directory for libraries")
+SET(LIBRARY_OUTPUT_PATH            ${PROJECT_BINARY_DIR}/lib)
+SET(EXECUTABLE_OUTPUT_PATH         ${PROJECT_BINARY_DIR}/bin)
