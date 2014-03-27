@@ -1,19 +1,9 @@
 #include "MyClass.h"
 
-MyClass::MyClass (QObject *parent) : QObject(parent)
+MyClass::MyClass (QObject *parent) : QObject(parent), _timer(parent)
 {
-}
-
-MyClass::~MyClass ()
-{
-   delete _timer;
-}
-
-void MyClass::init(const quint32 msecs)
-{
-   _timer = new QTimer(parent());
-   connect(_timer, SIGNAL(timeout()), this, SLOT(OnTimer()));
-   _timer->start(msecs);
+   connect(&_timer, SIGNAL(timeout()), this, SLOT(OnTimer()));
+   _timer.start(1);
 }
 
 void MyClass::OnTimer()

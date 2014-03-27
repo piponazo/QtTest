@@ -5,7 +5,7 @@
 void MyClassTest::testSlotCalled()
 {
    MyClass c(this);
-   c.init(1);
+//   c.init(1);
 
    QTest::qWait(5);
 
